@@ -1,3 +1,4 @@
+// BookAppointment - Developed by Amarasekara N.K.K.T (IT23233362)
 import { useEffect, useState } from "react";
 import API from "../services/api";
 import { useNavigate } from "react-router-dom";
@@ -373,7 +374,7 @@ export default function BookAppointment() {
           )}
         </div>
 
-        {/* ── Purpose of Meeting (with validation) ── */}
+        {/* Purpose of Meeting */}
         <div className={`section-card${messageError ? " has-error" : messageOk ? " is-valid" : ""}`}>
           <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
             <div style={{ width: 36, height: 36, borderRadius: 10, background: "#FEFCE8", border: "1px solid #FDE68A", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 16, flexShrink: 0 }}>💬</div>
@@ -384,7 +385,6 @@ export default function BookAppointment() {
               </div>
               <div style={{ fontSize: "0.75rem", color: "#888", marginTop: 1 }}>Briefly describe why you're booking this session</div>
             </div>
-            {/* Live check / X icon */}
             {messageTouched && (
               messageOk
                 ? <div style={{ width: 28, height: 28, borderRadius: "50%", background: "#DCFCE7", border: "1px solid #BBF7D0", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
@@ -414,12 +414,10 @@ export default function BookAppointment() {
             className={`ba-textarea${messageError ? " textarea-error" : messageOk ? " textarea-valid" : ""}`}
           />
 
-          {/* Character progress bar */}
           <div className="char-bar-bg">
             <div style={{ height: "100%", borderRadius: 99, background: barColor, width: `${charPct}%`, transition: "width 0.2s, background 0.2s" }} />
           </div>
 
-          {/* Footer row: error/success + char count */}
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 8, flexWrap: "wrap", gap: 8 }}>
             <div>
               {messageError
@@ -442,7 +440,6 @@ export default function BookAppointment() {
             </div>
           </div>
 
-          {/* Quick-fill hint chips — only shown before typing */}
           {message.length === 0 && (
             <div>
               <div style={{ fontSize: "0.72rem", color: "#bbb", marginTop: 12, marginBottom: 6, textTransform: "uppercase", letterSpacing: "0.08em" }}>Quick fill</div>
